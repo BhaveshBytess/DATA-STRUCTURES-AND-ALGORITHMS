@@ -56,7 +56,7 @@ Here’s your **Mini Note** for **Graph Valid Tree** (a classic Amazon-style que
 
 ---
 
-📘 **MINI NOTE**
+**MINI NOTE**
 
 🔹 **Problem**: Graph Valid Tree (Leetcode 261)  
 🔹 **Graph Type**: Undirected Graph (Adjacency List)  
@@ -120,7 +120,7 @@ A tree is **acyclic and connected** with exactly **n−1 edges** — any graph m
 ---
 
 
-### ✅ Final C++ Code for [Graph Valid Tree](https://leetcode.com/problems/graph-valid-tree/)
+### Final C++ Code for [Graph Valid Tree](https://leetcode.com/problems/graph-valid-tree/)
 
 ```cpp
 class Solution {
@@ -166,11 +166,11 @@ public:
 
 ---
 
-### 💡 Summary of What Makes a Valid Tree:
+### Summary of What Makes a Valid Tree:
 
-- ✅ **No Cycles** (handled by DFS and parent check)
+- **No Cycles** (handled by DFS and parent check)
     
-- ✅ **Fully Connected** (all nodes visited)
+- **Fully Connected** (all nodes visited)
     
-- ✅ **Exactly n - 1 edges** (quick pre-check)
+- **Exactly n - 1 edges** (quick pre-check)
     
