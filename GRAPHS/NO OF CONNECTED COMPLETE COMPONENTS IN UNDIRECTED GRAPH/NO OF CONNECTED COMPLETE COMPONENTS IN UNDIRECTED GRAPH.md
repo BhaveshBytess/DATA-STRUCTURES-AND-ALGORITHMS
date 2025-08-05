@@ -1,7 +1,3 @@
-Sure! Here's the **LeetCode-style question format** for the problem you just solved:
-
----
-
 ### **2685. Count the Number of Complete Components**
 
 **Medium**
@@ -58,19 +54,8 @@ The node [5] is not isolated in this case.
 
 ---
 
-Let me know if you want this saved inside a mindmap or notes doc.
-
-
----
-
 
 # MINI NOTE
-
-Here's your **mini note** for the problem **"2685. Count the Number of Complete Components"** using your standardized template:
-
----
-
-📘 **MINI NOTE**
 
 🔹 **Problem**: Count the Number of Complete Components (Leetcode 2685)  
 🔹 **Graph Type**: Undirected Graph (Adjacency List)  
@@ -109,11 +94,6 @@ Here's your **mini note** for the problem **"2685. Count the Number of Complete 
 
 🔸 **Final Insight**:  
 Use this strategy for problems that check if a graph/component is a **clique or fully connected**. The formula `n(n-1)/2` is a powerful validator for "completeness" in undirected components.
-
----
-
-Want me to log the next one too when you're done?
-
 
 ---
 
