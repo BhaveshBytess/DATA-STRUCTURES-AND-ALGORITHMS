@@ -1,4 +1,85 @@
-Here’s the **final C++ code** for **"Number of Connected Components in an Undirected Graph"**, using **DFS** and your preferred learning style (simple, readable, and clean):
+# **Problem: Number of Connected Components in an Undirected Graph**
+
+📄 **LeetCode Style Format**
+
+---
+
+**You are given an integer `n` representing the number of nodes in an undirected graph, numbered from `0` to `n - 1`, and a 2D array `edges` where each `edges[i] = [uᵢ, vᵢ]` represents an undirected edge between nodes `uᵢ` and `vᵢ`.**
+
+Return the **number of connected components** in the graph.
+
+---
+
+### 🔸 **Example 1:**
+
+```
+Input: n = 5, edges = [[0,1],[1,2],[3,4]]
+Output: 2
+```
+
+### 🔸 **Example 2:**
+
+```
+Input: n = 5, edges = [[0,1],[1,2],[2,3],[3,4]]
+Output: 1
+```
+
+---
+
+### 🔹 **Constraints:**
+
+* `1 <= n <= 2000`
+* `0 <= edges.length <= 5000`
+* `edges[i].length == 2`
+* `0 <= uᵢ, vᵢ < n`
+* `uᵢ ≠ vᵢ`
+* There are no repeated edges.
+
+---
+Absolutely, Bhavesh! Here's your **mini note** for **"Number of Connected Components in an Undirected Graph"** — following your custom format for consistent DSA revision:
+
+---
+
+### **Mini Note**
+
+🔹 **Problem:** Number of Connected Components in an Undirected Graph
+🔹 **Graph Type:** Undirected Graph (Adjacency List)
+🔹 **Technique:** DFS (or BFS) Traversal + Visited Tracking
+🔹 **Core Template:** Count how many times DFS starts → each time = new component
+🔹 **Pattern Tag:** #GraphTraversal #ConnectedComponents
+
+---
+
+🔸 **Logic Summary:**
+
+* Build the adjacency list from the edge list
+* Maintain a `visited[]` array
+* For every unvisited node, perform DFS to mark the entire connected component
+* Count how many such independent DFS traversals were done — that’s the number of connected components
+
+---
+
+🔸 **Trick:**
+
+* Each DFS traversal discovers one full component
+* The total number of DFS calls = number of components
+
+---
+
+🔸 **Why Union Find can be used here:**
+
+* Union Find is a more optimal approach if the graph is very large
+* Especially useful in dynamic graphs (when edges are being added in real time)
+
+---
+
+🔸 **Final Insight:**
+This is the **foundation problem** for any graph question involving **connected components**. Whether grid-based, string-based, or DSU-based, this logic will come up repeatedly.
+
+
+---
+
+# SOLUTION
 
 ```cpp
 class Solution {
@@ -40,7 +121,7 @@ public:
 
 ---
 
-### 🧠 Quick Intuition Recap:
+### Quick Intuition Recap:
 
 - Each unvisited node → start of a new component.
     
