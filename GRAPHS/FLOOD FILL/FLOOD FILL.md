@@ -2,9 +2,9 @@ Let’s tackle **LeetCode 733. Flood Fill** :
 
 
 ---
-## 🌊 Flood Fill (LeetCode 733)
+## Flood Fill (LeetCode 733)
 
-### 🔍 Problem Statement
+### Problem Statement
 
 You are given a 2D integer array `image`, representing the pixel values of an image, and three integers `sr`, `sc`, and `newColor`.
 
@@ -19,7 +19,7 @@ Return the final image after performing the flood fill.
 
 ---
 
-### 📌 Example 1:
+### Example 1:
 
 ```
 Input:
@@ -34,7 +34,7 @@ Here, you flood fill starting at `(0,0)`—color `1`—so all connected `1`s cha
 
 ---
 
-### 📌 Example 2:
+### Example 2:
 
 ```
 Input:
@@ -49,7 +49,7 @@ Since `newColor` is the same as the original, nothing changes.
 
 ---
 
-### ✅ Objective
+### Objective
 
 Write the function:
 
@@ -66,7 +66,7 @@ Implement this using your DFS or BFS skills — **no hints or full solution unti
 
 ---
 
-## 💡 Key Points to Think:
+## Key Points to Think:
 
 - How will you **avoid infinite loops** when changing colors in cycles?
     
@@ -77,7 +77,7 @@ Implement this using your DFS or BFS skills — **no hints or full solution unti
 
 ---
 
-### 🔄 Your Turn:
+### Your Turn:
 
 Work through your strategy:
 
@@ -101,7 +101,7 @@ Here’s your **Mini Note** for **Flood Fill (Leetcode 733)** — a foundational
 
 ---
 
-📘 **MINI NOTE**
+**MINI NOTE**
 
 🔹 **Problem**: Flood Fill (Leetcode 733)  
 🔹 **Graph Type**: Grid Graph (2D Matrix)  
@@ -192,7 +192,7 @@ public:
 
 ---
 
-### ✅ Time & Space Complexity:
+### Time & Space Complexity:
 
 - **Time:** O(m × n) — in the worst case, we may visit every pixel.
     
@@ -206,7 +206,7 @@ Let's now do the **BFS version of Flood Fill**. Same logic as DFS, just implemen
 
 ---
 
-## 🔁 **Flood Fill — BFS Version**
+## **Flood Fill — BFS Version**
 
 Leetcode-style C++ code:
 
@@ -251,7 +251,7 @@ public:
 
 ---
 
-## 📌 Key Points:
+## Key Points:
 
 - **Base condition**: If the color you're trying to flood with is the same as the starting pixel → return immediately.
     
