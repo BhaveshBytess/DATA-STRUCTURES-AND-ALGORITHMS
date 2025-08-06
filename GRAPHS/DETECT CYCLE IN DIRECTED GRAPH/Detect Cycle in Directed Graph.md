@@ -327,8 +327,3 @@ This `true` bubbles up to all previous calls, and ultimately `hasCycle()` return
 - The `pathVisited[]` array tracks the _current recursion path_. If you revisit a node that’s _still in the current call stack_, you’ve found a **cycle**.
     
 - If it were only in `visited[]` but not in `pathVisited[]`, it just means we finished processing that branch — not a cycle.
-    
-
----
-
-Would you like a dry run of **non-cyclic case** too for clarity?
