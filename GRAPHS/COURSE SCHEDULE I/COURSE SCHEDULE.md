@@ -1,8 +1,4 @@
-Great! Let’s now dive into **LeetCode 210. Course Schedule II** — the follow-up to cycle detection in directed graphs, and a perfect use case for **Kahn’s Algorithm (BFS Topological Sort)**.
-
----
-
-### ✅ **LeetCode Style Problem**
+### **LeetCode Style Problem**
 
 > **210. Course Schedule II**
 > 
@@ -42,15 +38,10 @@ You return the **topo sort** order (only possible if there’s **no cycle**).
     - Decrease indegree of neighbors, and if any neighbor becomes 0, push to queue.
         
 5. If the result size is less than `numCourses`, there's a **cycle**, return empty array.
-    
 
 ---
 
-Absolutely! Here's the **LeetCode-style description** for **Course Schedule I**, which is focused purely on **cycle detection in a directed graph** using either **DFS** or **Kahn’s Algorithm (BFS)**.
-
----
-
-### ✅ **LeetCode 207. Course Schedule**
+### **LeetCode 207. Course Schedule**
 
 > You are given a total of `numCourses` courses you have to take, labeled from `0` to `numCourses - 1`.  
 > You are also given an array `prerequisites` where `prerequisites[i] = [a, b]` indicates that you must take **course `b` before course `a`**.
@@ -85,30 +76,6 @@ Can you finish all courses **without encountering any cycles** in the directed g
     
     > Is the graph a **Directed Acyclic Graph (DAG)**?
     
-
----
-
-Would you like to solve this one using **DFS cycle detection (with pathVisited)** first or **BFS Kahn's Algorithm**?  
-Let me know your grind style — and I’ll only _nudge_.
-
----
-
-
-Perfect instinct! Yes, this is a textbook **Kahn’s Algorithm** application.
-
-Let’s nudge your thoughts forward — without giving code — just steps:
-
----
-
-### 🔁 What you’re given:
-
-- `numCourses` = total number of courses (nodes).
-    
-- `prerequisites = [[a, b], ...]` = directed edges (`b → a`).
-    
-
-You’re to **detect if there’s a cycle**.
-
 ---
 
 ### ⚙️ Step-by-step for Kahn's Algorithm (Cycle Detection via BFS Topological Sort):
@@ -136,11 +103,7 @@ You’re to **detect if there’s a cycle**.
     - If `visitedCount == numCourses`, return `true` → all courses are doable.
         
     - Else, return `false` → there’s a cycle.
-        
-
----
-
-That’s it. Now, give it a try. Let me know when you're ready to check or if you want help debugging your grind.
+   
 
 
 
@@ -224,13 +187,13 @@ Here’s the **final C++ code** using **Kahn’s Algorithm** (BFS Topological So
 
 ---
 
-### ✅ Problem Summary
+### Problem Summary
 
 Return `true` if it's possible to finish all courses given the prerequisites (i.e., the graph is a **DAG** — no cycles).
 
 ---
 
-### ✅ Final Code (C++ — Kahn's Algo)
+### Final Code (C++ — Kahn's Algo)
 
 ```cpp
 class Solution {
@@ -287,6 +250,3 @@ public:
 - **Space:** `O(N + E)` — Adjacency list and indegree array.
     
 
----
-
-Let me know when you're ready to grind **Course Schedule II (topological ordering)** next — it's a natural next step from here.
