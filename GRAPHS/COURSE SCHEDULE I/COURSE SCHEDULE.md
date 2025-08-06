@@ -1,44 +1,4 @@
 ### **LeetCode Style Problem**
-
-> **210. Course Schedule II**
-> 
-> There are `numCourses` courses labeled from `0` to `numCourses - 1`.  
-> You are given an array `prerequisites` where `prerequisites[i] = [a, b]` means you must take course `b` before course `a`.
-> 
-> Return **any valid order** in which you can finish all courses.  
-> If it is impossible to finish all courses, return an **empty array**.
-
----
-
-### 🧠 **Key Insight**
-
-This is classic **Topological Sort**:
-
-- Each course is a **node**.
-    
-- Each `[a, b]` is a **directed edge from b → a**.
-    
-
-You return the **topo sort** order (only possible if there’s **no cycle**).
-
----
-
-### ✅ **Approach (Kahn’s Algorithm – BFS Topo Sort)**
-
-1. **Build graph** using adjacency list.
-    
-2. **Compute indegree** for each node.
-    
-3. **Push indegree 0 nodes** into a queue.
-    
-4. **Process BFS**:
-    
-    - Pop from queue, append to result.
-        
-    - Decrease indegree of neighbors, and if any neighbor becomes 0, push to queue.
-        
-5. If the result size is less than `numCourses`, there's a **cycle**, return empty array.
-
 ---
 
 ### **LeetCode 207. Course Schedule**
@@ -50,7 +10,7 @@ You return the **topo sort** order (only possible if there’s **no cycle**).
 
 ---
 
-### 🔁 Example
+### Example
 
 **Input:**  
 `numCourses = 2`, `prerequisites = [[1, 0]]`  
@@ -59,7 +19,7 @@ You return the **topo sort** order (only possible if there’s **no cycle**).
 
 ---
 
-### 🔁 Example 2
+### Example 2
 
 **Input:**  
 `numCourses = 2`, `prerequisites = [[1, 0], [0, 1]]`  
@@ -68,7 +28,7 @@ You return the **topo sort** order (only possible if there’s **no cycle**).
 
 ---
 
-### 🧠 What’s Really Being Asked?
+### What’s Really Being Asked?
 
 Can you finish all courses **without encountering any cycles** in the directed graph formed by the prerequisites?
 
