@@ -1,16 +1,12 @@
-Great 🔥 Let's now move to the **next graph stage**: #CYCLE_DIRECTED_GRAPH 
+### **LeetCode-Style Question: Detect Cycle in a Directed Graph**
+
+> **Question Name**: Detect Cycle in a Directed Graph  
+> **Difficulty**: Medium  
+> **Concepts**: DFS, Graph, Cycle Detection, Recursion Stack
 
 ---
 
-### 🔗 **LeetCode-Style Question: Detect Cycle in a Directed Graph**
-
-> 🔢 **Question Name**: Detect Cycle in a Directed Graph  
-> 🟦 **Difficulty**: Medium  
-> 📘 **Concepts**: DFS, Graph, Cycle Detection, Recursion Stack
-
----
-
-### ❓ Problem Statement
+### Problem Statement
 
 You are given a **directed graph** with `n` nodes labeled from `0` to `n - 1` and a list of directed edges `edges`, where `edges[i] = [u, v]` represents a **directed edge from `u` to `v`**.
 
@@ -18,7 +14,7 @@ Return `true` **if the graph contains a cycle**, and `false` otherwise.
 
 ---
 
-### 📥 Input
+### Input
 
 - `n`: Integer, number of nodes. (1 ≤ n ≤ 10⁵)
     
@@ -27,14 +23,14 @@ Return `true` **if the graph contains a cycle**, and `false` otherwise.
 
 ---
 
-### 📤 Output
+### Output
 
 - Return `true` if a cycle exists, otherwise return `false`.
     
 
 ---
 
-### 🧠 Example
+### Example
 
 ```cpp
 Input:
@@ -56,11 +52,6 @@ false
 Explanation: No cycles.
 ```
 
----
-
-Let me know when you want to start grinding this question. Stick to our rule: **no solution**, only light nudges when asked. 🧠⚔️
-
----
 
 # MINI-NOTE : 
 
@@ -126,21 +117,13 @@ This is a **core building block** for:
 - Compiler dependency resolution
     
 
-----
-
-Yes, Bhavesh, you're **very close** to cracking the core difference between cycle detection in **undirected vs directed graphs**. Let’s lock in that understanding:
-
----
-
-### ✅ You're Right About:
-
 - **No need for `parent`** in **directed graphs**:  
     In directed graphs, cycles are not about "going back to the parent" but rather **revisiting a node that's already in the current path of recursion**.
     
 
 ---
 
-### 🚨 But One Crucial Insight:
+### But One Crucial Insight:
 
 You **can’t** rely solely on a single `visited[]` array.
 
@@ -157,7 +140,7 @@ Because a cycle in a **directed graph** means:
 
 ---
 
-### ⛓️ So Your Modified Flow Should Be:
+### So Your Modified Flow Should Be:
 
 ```cpp
 bool dfs(int node, vector<vector<int>>& adj, vector<bool>& visited, vector<bool>& pathVisited) {
@@ -178,16 +161,10 @@ bool dfs(int node, vector<vector<int>>& adj, vector<bool>& visited, vector<bool>
 }
 ```
 
-Want to go ahead and write this yourself with just this nudging? Or do you want me to compile the whole clean code when you're ready?
 
 ---
 
-
-Sure Bhavesh! Here's the **clean, LeetCode-style C++ code** to detect a **cycle in a directed graph** using DFS, implementing everything we just discussed:
-
----
-
-### ✅ **LeetCode Style: Detect Cycle in a Directed Graph**
+### **LeetCode Style: Detect Cycle in a Directed Graph**
 
 ```cpp
 class Solution {
@@ -235,7 +212,7 @@ public:
 
 ---
 
-### ✅ Example Usage (Main or LeetCode-style wrapper)
+### Example Usage (Main or LeetCode-style wrapper)
 
 If this were a LeetCode problem like:
 
@@ -249,26 +226,16 @@ bool hasCycle(int n, vector<vector<int>>& edges);
 
 ---
 
-### 🚀 Time and Space Complexity
+### Time and Space Complexity
 
 - **Time:** `O(V + E)` — Standard DFS traversal.
     
 - **Space:** `O(V)` for visited and recursion stack arrays.
-    
-
----
-
-Let me know when you're ready for the next graph grind or if you want to implement **BFS-based cycle detection for directed graphs (Kahn’s algorithm)** next.
 
 
 ---
 
-
-Absolutely Bhavesh, let’s dry run the **cycle detection in directed graph using DFS** — step by step — on a simple example.
-
----
-
-### 🔍 Test Case
+### Test Case
 
 Let’s take a directed graph with a cycle:
 
@@ -287,7 +254,7 @@ This forms a cycle: `1 → 2 → 3 → 1`
 
 ---
 
-### 🔁 Step-by-Step Dry Run
+### Step-by-Step Dry Run
 
 We’ll track:
 
@@ -300,7 +267,7 @@ We’ll track:
 
 ---
 
-#### ✅ **Adjacency List Created**
+#### **Adjacency List Created**
 
 ```cpp
 adj[0] = {1}
@@ -311,7 +278,7 @@ adj[3] = {1}
 
 ---
 
-#### 🔄 Loop through all nodes
+#### Loop through all nodes
 
 - `visited = [F, F, F, F]`
     
@@ -356,9 +323,6 @@ adj[3] = {1}
 
 This `true` bubbles up to all previous calls, and ultimately `hasCycle()` returns `true`.
 
----
-
-### 🧠 What Made It Work?
 
 - The `pathVisited[]` array tracks the _current recursion path_. If you revisit a node that’s _still in the current call stack_, you’ve found a **cycle**.
     
