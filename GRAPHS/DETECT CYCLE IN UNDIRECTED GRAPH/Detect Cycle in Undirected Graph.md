@@ -1,23 +1,10 @@
-Perfect Bhavesh. You're now entering **Stage 2 of Graph Mastery** — tackling **Cycle Detection in Undirected Graphs**, a **core DFS pattern** used in:
-
-- Tree validation
-    
-- Disjoint Set Union (Union Find)
-    
-- Graph-based interview challenges
-    
-
-Let’s jump straight into it — your **Leetcode-style grinding setup**, no fluff, only what’s essential for your process:
-
----
-
-### 🔥 Leetcode-Style Problem:
+### Leetcode-Style Problem:
 
 **Title**: Detect Cycle in an Undirected Graph  
 **Difficulty**: Medium  
 **Topic**: Graph, DFS, Cycle Detection
 
-#### 🧾 Problem Statement:
+#### Problem Statement:
 
 You are given an **undirected graph** with `n` nodes labeled from `0` to `n - 1`, and a list of `edges` where each edge is a pair `[u, v]` indicating an undirected connection between node `u` and node `v`.
 
@@ -26,7 +13,7 @@ Return `true` if there is a cycle, `false` otherwise.
 
 ---
 
-### 🧠 Your Function Signature (C++):
+### Your Function Signature (C++):
 
 ```cpp
 bool hasCycle(int n, vector<vector<int>>& edges);
@@ -34,7 +21,7 @@ bool hasCycle(int n, vector<vector<int>>& edges);
 
 ---
 
-### 💡 Constraints:
+### Constraints:
 
 - `1 <= n <= 10^5`
     
@@ -51,13 +38,6 @@ bool hasCycle(int n, vector<vector<int>>& edges);
 ---
 
 # MINI-NOTE : 
-
-
-Absolutely Bhavesh! Here's your **mini note** for **Detect Cycle in an Undirected Graph** — structured exactly in your format for clarity and long-term revision.
-
----
-
-### ✅ **Mini Note**
 
 🔹 **Problem:** Detect Cycle in Undirected Graph  
 🔹 **Graph Type:** Undirected Graph (Adjacency List)  
@@ -109,18 +89,14 @@ A must-know building block for:
 - Disjoint Set Union (DSU)-based solutions
     
 - Spanning Trees
-    
-
----
-
-Let me know if you want the **C++ DFS code** version here or if you’re ready to log the next one, Bhavesh 🚀
+  
 
 
 
 
 ---
 
-### 🔗 LeetCode-Style: Detect Cycle in an Undirected Graph
+### LeetCode-Style: Detect Cycle in an Undirected Graph
 
 ```cpp
 class Solution {
@@ -168,7 +144,7 @@ public:
 
 ---
 
-### 📘 Example Usage:
+### Example Usage:
 
 In LeetCode, you’d be given:
 
@@ -179,20 +155,17 @@ Solution sol;
 bool hasCycle = sol.hasCycle(n, edges); // Output: true
 ```
 
----
-
-Let me know when you’re ready to move to **cycle detection in a _directed_ graph**, which is different logic (uses visited + recursion stack).
 
 
 ---
 
 # KAHN'S ALGO (BFS)
 
-Perfect. Let's now solve **Cycle Detection in a Directed Graph using BFS**, which is **Kahn’s Algorithm** — a classic topological sort-based method.
+Let's now solve **Cycle Detection in a Directed Graph using BFS**, which is **Kahn’s Algorithm** — a classic topological sort-based method.
 
 ---
 
-### ✅ **Problem (LeetCode Style)**
+### **Problem (LeetCode Style)**
 
 > Given a **directed graph** with `n` nodes (0 to n-1) and a list of edges, return **true if the graph does NOT contain a cycle**, otherwise return **false**.
 > 
@@ -200,7 +173,7 @@ Perfect. Let's now solve **Cycle Detection in a Directed Graph using BFS**, whic
 
 ---
 
-### ✅ **Approach (Kahn’s Algorithm - Topological Sort)**
+### **Approach (Kahn’s Algorithm - Topological Sort)**
 
 1. Build an **adjacency list** and compute the **in-degree** of every node.
     
@@ -223,7 +196,7 @@ Perfect. Let's now solve **Cycle Detection in a Directed Graph using BFS**, whic
 
 ---
 
-### ✅ **C++ Code (Clean & Simple)**
+### **C++ Code (Clean & Simple)**
 
 ```cpp
 class Solution {
@@ -269,7 +242,7 @@ public:
 
 ---
 
-### 💡 Example
+### Example
 
 ```txt
 Input:
@@ -284,7 +257,3 @@ edges = [[0,1],[1,2],[2,0]]
 
 → Output: false (Cycle exists)
 ```
-
----
-
-Want to dry-run this with an example or jump to a follow-up question (like Course Schedule II or Topo Sort list)?
