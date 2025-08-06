@@ -1,10 +1,6 @@
-Great call — let’s tackle the classic follow-up: #COURSE_SCHEDULE_II
+## LeetCode Style: Course Schedule II (Topological Ordering)
 
----
-
-## 📘 LeetCode Style: Course Schedule II (Topological Ordering)
-
-### 🔍 Problem Statement
+### Problem Statement
 
 You are given:
 
@@ -15,7 +11,7 @@ You are given:
 
 Return **any valid order** in which you can complete all courses. If **no valid ordering exists** (because of a cycle), return an **empty array**.
 
-### 💻 Function Signature
+### Function Signature
 
 ```cpp
 vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites);
@@ -23,7 +19,7 @@ vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites);
 
 ---
 
-### 🚀 Key Insights
+### Key Insights
 
 - Each valid order is basically a **topological sort** of the directed graph.
     
@@ -32,7 +28,7 @@ vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites);
 
 ---
 
-### 🧠 Constraints
+### Constraints
 
 - `1 <= numCourses <= 10^5`
     
@@ -47,23 +43,18 @@ vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites);
 
 ---
 
-### ✅ Your Task
+### Your Task
 
 Use your favorite approach — **either Kahn’s Algorithm (BFS)** or **Recursive DFS (using pathVisited)** — to build a topological order, or return an empty list if a cycle is found.
 
 ---
 
-Drop your thoughts or partial code whenever you’re ready. I’ll nudge you gently from there — no full solution until you’re satisfied with your own grind. Let’s do this!
 
-
----
-
-
-Great! Let's compile the **final clean C++ code** for **Leetcode 210. Course Schedule II** using **Kahn’s Algorithm (Topological Sort with BFS)**:
+Let's compile the **final clean C++ code** for **Leetcode 210. Course Schedule II** using **Kahn’s Algorithm (Topological Sort with BFS)**:
 
 ---
 
-### ✅ Problem Summary
+### Problem Summary
 
 - You're given `numCourses` and a list of `prerequisites`, where each pair `[a, b]` means **take course `b` before `a`**.
     
@@ -74,7 +65,7 @@ Great! Let's compile the **final clean C++ code** for **Leetcode 210. Course Sch
 
 ---
 
-### ✅ Final C++ Code (Kahn’s Algo – BFS)
+### Final C++ Code (Kahn’s Algo – BFS)
 
 ```cpp
 class Solution {
@@ -132,7 +123,7 @@ Here is the **full C++ code** for **Leetcode 210. Course Schedule II** using **D
 
 ---
 
-### ✅ DFS + Topological Sort + Cycle Detection
+### DFS + Topological Sort + Cycle Detection
 
 ```cpp
 class Solution {
@@ -187,7 +178,7 @@ public:
 
 ---
 
-### 🔍 Summary:
+### Summary:
 
 - We detect cycles using `pathVisited` (same as in earlier questions).
     
@@ -195,5 +186,3 @@ public:
     
 - Otherwise, push nodes in a stack (reversed post-order) and return the valid course ordering.
     
-
-Let me know when you're ready to jump to the next question — DFS, BFS, or Topo Sort-based — your grind continues 💪
