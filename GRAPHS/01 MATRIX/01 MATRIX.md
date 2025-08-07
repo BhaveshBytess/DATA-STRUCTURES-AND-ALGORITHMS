@@ -2,7 +2,7 @@ Sure! Here’s the **01 Matrix problem** in **LeetCode-style** — **no hints, n
 
 ---
 
-## 🔷 LeetCode-Style Problem: **01 Matrix**
+## LeetCode-Style Problem: **01 Matrix**
 
 > **Given** an `m x n` binary matrix `mat`, return the **distance of the nearest 0 for each cell**.
 
@@ -11,21 +11,21 @@ For **each cell** with a `1`, compute the **distance to the nearest 0** in the m
 
 ---
 
-### 🧾 Input:
+### Input:
 
 - A 2D matrix `mat` of size `m x n` consisting only of `0`s and `1`s.
     
 
 ---
 
-### 🧾 Output:
+### Output:
 
 - Return a matrix of the same size where each cell contains the **distance to the nearest 0**.
     
 
 ---
 
-### 📎 Constraints:
+### Constraints:
 
 - `1 <= m, n <= 10⁴`
     
@@ -36,7 +36,7 @@ For **each cell** with a `1`, compute the **distance to the nearest 0** in the m
 
 ---
 
-### 💡 Example:
+### Example:
 
 #### Input:
 
@@ -60,18 +60,13 @@ mat = [
 
 ---
 
-Let me know when you’re done solving it, and I’ll validate or review your approach or code.  
-Would you like the **dry-run grid** as well once you're done?
+
+
+Here's the **final clean C++ code** for the **01 Matrix** problem using **multi-source BFS**, optimized and ready for submission:
 
 ---
 
-
-
-Here's the **final clean C++ code** for the **01 Matrix** problem using **multi-source BFS**, optimized and ready for submission (like on LeetCode):
-
----
-
-### ✅ Problem:
+### Problem:
 
 For each cell containing `1`, find the **shortest distance** to the **nearest cell containing `0`**.  
 Return the resulting matrix of distances.
@@ -145,7 +140,7 @@ Whenever the shortest path from multiple sources is needed, think of **BFS with 
 
 ---
 
-### ✅ Final Code (C++ - BFS):
+### Final Code (C++ - BFS):
 
 ```cpp
 #include <bits/stdc++.h>
@@ -194,7 +189,7 @@ vector<vector<int>> updateMatrix(vector<vector<int>>& mat) {
 
 ---
 
-### ✅ Key Points Recap:
+### Key Points Recap:
 
 - You start BFS from all cells that are already `0`.
     
@@ -202,7 +197,3 @@ vector<vector<int>> updateMatrix(vector<vector<int>>& mat) {
     
 - You **don’t need DFS** or to manually track `step++` globally — it's automatically managed per level in BFS.
     
-
----
-
-Let me know if you want to convert this to **Python** or want to move to the next graph/grid grind question. You're killing it, Bhavesh — _this is how pros build mastery_. 🔥
