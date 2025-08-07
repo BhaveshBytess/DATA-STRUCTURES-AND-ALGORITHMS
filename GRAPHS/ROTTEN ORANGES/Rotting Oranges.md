@@ -1,15 +1,11 @@
-Absolutely — here’s **LeetCode-Style Stage 3: Rotting Oranges**, no hints, no solutions — just the raw problem. Let’s grind. 💪
-
----
-
-## 🧩 **LeetCode 994: Rotting Oranges**
+## **LeetCode 994: Rotting Oranges**
 
 **Difficulty**: Medium  
 **Topics**: Graph, Grid, Breadth-First Search (BFS), Queue
 
 ---
 
-### 🔔 Problem Statement
+### Problem Statement
 
 You are given an `m x n` **grid** where each cell can have one of three values:
 
@@ -27,7 +23,7 @@ If it is **impossible** to rot all the fresh oranges, return `-1`.
 
 ---
 
-### 📥 Input
+### Input
 
 - `grid`: `vector<vector<int>>`, a 2D grid of integers (size `m x n`)
     
@@ -36,7 +32,7 @@ If it is **impossible** to rot all the fresh oranges, return `-1`.
 
 ---
 
-### 📤 Output
+### Output
 
 - Return a single integer:
     
@@ -47,7 +43,7 @@ If it is **impossible** to rot all the fresh oranges, return `-1`.
 
 ---
 
-### 🧪 Example
+### Example
 
 **Input:**
 
@@ -67,7 +63,7 @@ grid = [
 
 ---
 
-### 📎 Constraints
+### Constraints
 
 - `m == grid.length`
     
@@ -76,12 +72,6 @@ grid = [
 - `1 <= m, n <= 10`
     
 - `grid[i][j]` is `0`, `1`, or `2`.
-    
-
----
-
-When you’re ready, start grinding it out.  
-You know the pact: **no spoon-feeding**, only nudging — whenever you say “nudge”, I’ll walk with you.
 
 
 ---
@@ -146,101 +136,11 @@ Whenever a problem involves **spread, infection, fire, signal**, etc. from **mul
 ---
 
 
-
-
-![[Pasted image 20250729185809.png]]
-
-![[Pasted image 20250729185831.png]]
-
-
-Great job writing this out so early in the grind — your effort is on point. 💯  
-Now let’s **analyze it deeply** and do a **Reality Check**, just like we always do:
-
----
-
-### ✅ **What You Got Right**
-
-- You're clearly using a **DFS-style approach** — good instinct.
-    
-- You’ve already written the boundary check, grid value checks (`== 0`, `== 2`) — clean thinking.
-    
-- You're modifying grid values (`grid[i][j] = 2`) — that’s key.
-    
-- You’re visiting **4 directions**: top, bottom, left, right — that’s exactly how it should be.
-    
-
-So structurally, you're in the **right territory**.
-
----
-
-### ❌ **Where It Falls Apart**
-
-This is **not a pure DFS problem**. Here's why your code will **not give correct results** on LeetCode:
-
-#### 🔻 1. You're using DFS — but **time is not being tracked**.
-
-This is not just about **reaching** oranges.  
-It's about:
-
-> **How many minutes** it takes for fresh oranges to rot from the source rotten ones.
-
-You need to model **time flow** — DFS doesn’t naturally handle that.  
-You need **level-by-level traversal** (i.e., **BFS**) — where every level = 1 minute.
-
-#### 🔻 2. DFS rots all connected oranges **instantly** #ROTTEN_ORANGES 
-
-In your DFS, when you call:
-
-```cpp
-dfs(i+1, j, grid);
-```
-
-That orange is **instantly** rotted, which contradicts the problem — **rotting should take time per level**.
-
----
-
-### 🔄 So What Needs to Change?
-
-- You need to switch from DFS → **BFS** (Breadth First Search).
-    
-- Use a **queue** to store rotten oranges with their time.
-    
-- At each step (minute), rot all 4-directionally adjacent fresh oranges and push them into the queue with `time + 1`.
-    
-
----
-
-### Summary: Your Code Status
-
-|Criteria|Status|
-|---|---|
-|Logic Structure|✅ Good Start|
-|Time Tracking|❌ Missing|
-|Correct Result|❌ Will fail on time-sensitive test cases|
-|Core Algorithm Match|❌ DFS not ideal here, needs BFS|
-
----
-
-### 🔥 Bhavesh-style Verdict:
-
-- You're **thinking clearly** and following patterns — great.
-    
-- But here, you need to **ditch DFS** and go **full BFS**, because this is not just a traversal — this is **simulating real-time spread**.
-    
-
-Let me know if you want to write the **BFS version together**, or if you want just a **nudge** and you'll grind it solo.
-
-Your move. 🧠👊
-
-
----
-
-
 Here is the **final, correct C++ solution** to the **Rotting Oranges** problem using **BFS (level-order traversal)** — the only correct approach for simulating time (minutes):
 
 ---
 
-### ✅ Problem Recap (LeetCode style):
+### Problem Recap (LeetCode style):
 
 > **Every minute**, any **fresh orange** (`1`) that is **4-directionally adjacent** to a **rotten orange** (`2`) becomes rotten.  
 > Return the **minimum number of minutes** that must elapse until **no cell has a fresh orange**.  
@@ -248,7 +148,7 @@ Here is the **final, correct C++ solution** to the **Rotting Oranges** problem u
 
 ---
 
-### ✅ Final Code (C++ – BFS with time simulation):
+### Final Code (C++ – BFS with time simulation):
 
 ```cpp
 #include <vector>
@@ -312,7 +212,7 @@ int orangesRotting(vector<vector<int>>& grid) {
 
 ---
 
-### 🧠 Key Concepts:
+### Key Concepts:
 
 - **Multi-source BFS**: Start BFS from all rotten oranges simultaneously.
     
@@ -323,13 +223,9 @@ int orangesRotting(vector<vector<int>>& grid) {
 
 ---
 
-### ✅ Time & Space Complexity:
+### Time & Space Complexity:
 
 - **Time**: `O(n * m)` — we visit each cell at most once.
     
 - **Space**: `O(n * m)` — for queue storage in worst case.
     
-
----
-
-Let me know if you want this converted to **Java or Python**, or want a **step-by-step dry run** for a sample grid.
