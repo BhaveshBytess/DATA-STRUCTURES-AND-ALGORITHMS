@@ -1,9 +1,4 @@
-
-Absolutely! Here's the next graph BFS classic:
-
----
-
-### 🧩 **286. Walls and Gates** — [Medium]
+## **286. Walls and Gates** — [Medium]
 
 **LeetCode**  
 **Topics:** Graph, BFS, Matrix  
@@ -24,7 +19,7 @@ Fill each empty room with the **number of steps to its nearest gate**. If it is 
 
 ---
 
-### 🔒 Constraints:
+### Constraints:
 
 - Only move **up, down, left, right**.
     
@@ -35,7 +30,7 @@ Fill each empty room with the **number of steps to its nearest gate**. If it is 
 
 ---
 
-### 🧾 Input Format:
+### Input Format:
 
 ```cpp
 vector<vector<int>> rooms
@@ -45,13 +40,13 @@ Each `rooms[i][j]` is either `-1` (wall), `0` (gate), or `INF` (`2147483647`).
 
 ---
 
-### 🧾 Output:
+### Output:
 
 The grid should be **modified in-place**, where each empty room now contains the distance to its nearest gate.
 
 ---
 
-### 🧪 Example:
+### Example:
 
 ```txt
 Input:
@@ -146,65 +141,7 @@ The moment an empty room is reached, it’s already guaranteed to have the **sho
 
 
 
-
-
-
-
-![[Pasted image 20250731160249.png]]
-![[Pasted image 20250731160407.png]]
-
-
-
-You're _very_ close, Bhavesh — the structure you've written follows the right logic for solving **Walls and Gates** (Leetcode 286) using **Multi-Source BFS**. 💯  
-Let me walk you through your code and show you **minor issues + final clean code.**
-
----
-
-### 🧠 Problem Recap: Walls and Gates (Leetcode 286)
-
-You're given a grid of:
-
-- `INF` (unreachable room)
-    
-- `0` (gate)
-    
-- `-1` (wall)
-    
-
-**Goal:**  
-Fill each room with the _shortest distance to the nearest gate_ using **4-directional BFS**.
-
----
-
-### ✅ What's Great in Your Code:
-
-- ✅ You initialize queue with all gate positions (`0`) → that’s **multi-source BFS**!
-    
-- ✅ You use `dx` / `dy` arrays for 4-directional traversal.
-    
-- ✅ You update `rooms[nx][ny] = rooms[x][y] + 1` → **correct BFS step propagation**.
-    
-- ✅ Good use of early return if `er == 0` (no INF present) — optional but clever.
-    
-
----
-
-### 🔧 Small Fixes Needed:
-
-#### 1. Typos:
-
-- `rooms[x][y]` → typo written as `room[x][Y]` or `room(x)(y)` in places.
-    
-- `grid[nx][ny] == INF` → should be `rooms[nx][ny] == INF`
-    
-- `nx >= 0 && ny >= 0 && nx < n && ny < m` — bounds check corrected.
-    
-- Don't compare `rooms[i][j] == 0` inside `INF` check block; split conditions.
-    
-
----
-
-### ✅ Final Clean Code (C++ Style)
+### Final Clean Code (C++ Style)
 
 ```cpp
 vector<vector<int>> solve(vector<vector<int>>& rooms) {
@@ -245,7 +182,7 @@ vector<vector<int>> solve(vector<vector<int>>& rooms) {
 
 ---
 
-### 🧠 Why BFS Works Here?
+### Why BFS Works Here?
 
 - This is a **grid-based shortest distance** problem.
     
@@ -258,7 +195,7 @@ vector<vector<int>> solve(vector<vector<int>>& rooms) {
 
 ---
 
-### 🎯 Tips for You
+### Tips for You
 
 1. **Trust BFS for shortest path** in unweighted grids.
     
@@ -284,7 +221,7 @@ The `-1` value — the **wall** — represents a **block** where you **cannot go
 
 ---
 
-### 🧱 What to Do for `-1` (Walls)?
+### What to Do for `-1` (Walls)?
 
 You **don’t push it into the queue**, and you **never walk into it** during BFS.
 
@@ -305,7 +242,7 @@ if (rooms[i][j] == 0) {
 }
 ```
 
-#### ✅ 2. **BFS Traversal:**
+#### 2. **BFS Traversal:**
 
 During BFS, only continue if:
 
@@ -328,7 +265,7 @@ Why? Because `rooms[nx][ny] == -1` will fail the `== INT_MAX` check and never be
 
 ---
 
-### 🔁 Example Walkthrough:
+### Example Walkthrough:
 
 Let’s say grid is:
 
@@ -356,14 +293,10 @@ rooms = [
 
 ---
 
-### 🔒 Summary
+### Summary
 
 |Cell Type|Push to Queue Initially?|Can be Traversed Into?|
 |---|---|---|
 |`0` (gate)|✅ Yes|🔁 No (already processed)|
 |`INF`|❌ No|✅ Yes|
 |`-1` (wall)|❌ No|❌ No|
-
----
-
-Let me know if you want a dry run on a sample grid with walls to see how it flows 👇
