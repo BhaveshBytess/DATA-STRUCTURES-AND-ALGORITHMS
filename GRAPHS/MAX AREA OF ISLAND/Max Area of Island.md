@@ -1,7 +1,3 @@
-Here’s the **LeetCode-style problem statement** for **695. Max Area of Island**, followed by the **mini note** in your requested format.
-
----
-
 ## **LeetCode-Style Question**
 
 **695. Max Area of Island**  
@@ -104,12 +100,6 @@ Island discovery requires **global exploration**; DP would need to recompute ove
 
 🔸 **Final Insight**  
 A direct application of flood fill; maximum area is found by **exploring and summing connected nodes** in all directions.
-
----
-
-If you want, I can also give you a **space-optimized BFS + DFS hybrid** template that works for _all_ grid connected-component problems, so you don’t have to re-code logic every time. This way, your future grid graph questions like “number of islands”, “rotten oranges”, etc., will just be 3–4 lines of customization. Would you like me to do that?
-
-
 ---
 
 
