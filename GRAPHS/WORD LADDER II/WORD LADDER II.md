@@ -1,8 +1,4 @@
-Here’s the **Word Ladder II** problem in classic **LeetCode-style**, exactly how you prefer — **just the question, no hints, no solutions**: #WORD_LADDER_II
-
----
-
-### 🧩 LeetCode 126. **Word Ladder II**
+# LeetCode 126. **Word Ladder II**
 
 **Hard**
 
@@ -23,7 +19,7 @@ If there is **no such sequence**, return an empty list.
 
 ---
 
-### 🔒 Constraints:
+### Constraints:
 
 - `1 <= beginWord.length <= 5`
     
@@ -42,7 +38,7 @@ If there is **no such sequence**, return an empty list.
 
 ---
 
-### 🔁 Example:
+### Example:
 
 ```txt
 Input:
@@ -148,7 +144,7 @@ So let’s not panic — I’ve got you.
 
 ---
 
-### 🧠 First, remember what the question asks:
+### First, remember what the question asks:
 
 You're given:
 
@@ -170,7 +166,7 @@ So you're NOT just checking _if_ a path exists (Word Ladder I), you're now colle
 
 ---
 
-### ✅ Strategy (High-level):
+### Strategy (High-level):
 
 We break this into 2 phases:
 
@@ -198,7 +194,7 @@ Once BFS finishes, use DFS or backtracking to **reconstruct all paths** from `en
 
 ---
 
-### ✅ Final Optimized Code (Clean, BFS + Backtrack)
+### Final Optimized Code (Clean, BFS + Backtrack)
 
 ```cpp
 class Solution {
@@ -280,7 +276,7 @@ public:
 
 ---
 
-### 🔁 What You Should Take Away:
+### What You Should Take Away:
 
 - **BFS builds the structure** (word connections via shortest steps).
     
@@ -591,7 +587,7 @@ Great, Bhavesh. Let’s dive into **Stage 2: Backtracking** to reconstruct **all
 
 ---
 
-### 🧩 Step-by-Step Code for Backtracking
+### Step-by-Step Code for Backtracking
 
 ```cpp
 // Assume `parents` is our map<string, vector<string>> built during BFS
@@ -630,7 +626,7 @@ backtrack(endWord, beginWord, parents, path);
 
 ---
 
-## 🔁 Dry Run of Backtracking
+## Dry Run of Backtracking
 
 Using our example’s `parents` map:
 
@@ -717,7 +713,7 @@ Continue popping back up to the `"cog"` level.
 
 ---
 
-### ✅ Final `result`
+### Final `result`
 
 ```cpp
 [
@@ -729,10 +725,6 @@ Continue popping back up to the `"cog"` level.
 ---
 
 **That completes the backtracking phase.** You now have **all** shortest transformation sequences, built from the BFS-constructed “parent tree.”
-
-Feel free to integrate both stages into one cohesive function and test with other examples.
-
----
 
 
 
