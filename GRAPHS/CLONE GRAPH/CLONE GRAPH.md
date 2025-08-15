@@ -1,8 +1,5 @@
-Here’s the **Clone Graph** problem in LeetCode’s original format: #CLONE_GRAPH
 
----
-
-**133. Clone Graph**  
+# **133. Clone Graph**  
 **Medium**
 
 **Problem Statement:**  
@@ -222,14 +219,9 @@ public:
 
 ---
 
-✅ **Complexity**
+ **Complexity**
 
 - **Time:** O(N + E) — visit each node & edge once
     
 - **Space:** O(N) — map + recursion/queue
     
-
----
-
-If you want, I can also make a **short "mini note" version** for Clone Graph like the BFS/graph notes format you’ve been using for revision.  
-Do you want me to make that for this problem next?
