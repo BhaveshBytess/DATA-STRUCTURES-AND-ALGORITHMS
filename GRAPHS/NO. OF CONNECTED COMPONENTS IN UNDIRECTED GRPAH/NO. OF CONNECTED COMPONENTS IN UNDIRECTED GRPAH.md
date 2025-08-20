@@ -129,5 +129,104 @@ public:
     
 - Every time you enter DFS from the main loop, that’s a new component.
     
+---
 
-Let me know when you’re ready to do the **BFS version** or move to the next graph problem like **Rotten Oranges** or **Cycle Detection**.
+
+## DSU METHOD
+
+
+```cpp
+class DSU {
+    vector<int> parent, rank;
+public:
+    DSU(int n) {
+        parent.resize(n);
+        rank.resize(n, 0);
+        for (int i = 0; i < n; i++) parent[i] = i;
+    }
+
+    int find(int x) {
+        if (parent[x] != x)
+            parent[x] = find(parent[x]); // path compression
+        return parent[x];
+    }
+
+    bool unite(int u, int v) {
+        int pu = find(u), pv = find(v);
+        if (pu == pv) return false; // already connected
+
+        // union by rank
+        if (rank[pu] < rank[pv]) {
+            parent[pu] = pv;
+        } else if (rank[pu] > rank[pv]) {
+            parent[pv] = pu;
+        } else {
+            parent[pu] = pv;
+            rank[pv]++;
+        }
+        return true;
+    }
+};
+
+class Solution {
+public:
+    int countComponents(int n, vector<vector<int>>& edges) {
+        DSU dsu(n);
+        int components = n;  // initially each node is its own component
+
+        for (auto &e : edges) {
+            if (dsu.unite(e[0], e[1])) {
+                components--;  // successfully merged → 1 less component
+            }
+        }
+
+        return components;
+    }
+};
+```
+
+---
+
+## 🔹 Pattern Tag
+
+- **Union-Find**
+    
+- **Connected Components**
+    
+
+---
+
+## 🔸 Logic Summary
+
+1. Start with `n` components.
+    
+2. For each edge `(u, v)`, if they belong to different components → merge them → `components--`.
+    
+3. Final answer = `components`.
+    
+
+---
+
+## 🔸 Trick
+
+- Key idea: DSU naturally merges connected nodes into same “set”.
+    
+- Avoids writing BFS/DFS manually.
+    
+
+---
+
+## 🔸 Why DFS/BFS works but DSU is better here?
+
+- DFS/BFS: O(N + E), must maintain visited array.
+    
+- DSU: Clean, especially if graph is given in **edge list** form.
+    
+
+---
+
+## 🔸 Final Insight
+
+DSU shines whenever you want to **count or check groups/components** without explicitly traversing adjacency lists.
+
+
