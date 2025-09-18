@@ -1,5 +1,5 @@
 
-## 🔹 Final Topic: **Articulation Points (Cut Vertices)**
+## 🔹 **Articulation Points (Cut Vertices)**
 
  **Definition:**  
 In a connected undirected graph, an **articulation point** (cut vertex) is a vertex such that removing it (and its incident edges) increases the number of connected components.
@@ -42,25 +42,6 @@ Because removing `1` disconnects `{3,4}` from `{0,2}`.
 ---
 
 ### DOUBTS : #ARTICULATION-POINTS
-
----
-
-# MINI-NOTE : 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ---
