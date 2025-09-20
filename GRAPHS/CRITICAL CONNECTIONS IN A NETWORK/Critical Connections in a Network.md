@@ -130,23 +130,6 @@ DFS order:
 So the answer is `[[1,3]]`. ✅
 
 
-
-
----
-
-
-
-# MINI-NOTE : 
-
-
-
-
-
-
-
-
-
-
 ----
 
 
